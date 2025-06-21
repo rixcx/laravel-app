@@ -1,4 +1,6 @@
 
-// @import 'variables.scss';
-// @import 'mixins.scss';
-@import 'components/_header.scss';
+@use 'global/destyle.css';
+@use 'global/common.scss';
+@use 'global/global.scss';
+
+@use 'components/header.scss';

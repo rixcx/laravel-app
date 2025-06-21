@@ -1,6 +1,6 @@
 <header class="header">
-    <h1 class="title"><a href="/">Qme</a></h1>
-    <nav class="nav">
+    <h1 class="header__title"><a href="/">Qme</a></h1>
+    <nav class="header__nav">
       <ul>
         <li><a href="/profile">プロフィール</a></li>
         <li><a href="/questions">質問一覧</a></li>

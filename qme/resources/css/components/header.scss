@@ -1,0 +1,41 @@
+@use "global/global" as global;
+
+.header {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  
+  @include global.mediaquery(sp) {
+    background-color: peachpuff
+  }
+  
+  &__title {
+    margin: auto 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.75rem;
+    background-color: #ccc;
+    
+    a {
+      @include global.hover;
+    }
+    
+    ul {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    div {
+      gap: 1rem;
+    }
+}
+  
+  
+}

@@ -38,5 +38,12 @@ Docker-composeで運用
 * 各種設定
 * 管理者のみ 質問作成画面
 
+## 開発環境起動
+⚡️Vite
+```
+$cd qme && npm run dev
+```
+
+
 ## 次やること
 共通パーツとcss設定

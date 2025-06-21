@@ -1,0 +1,8 @@
+@use "global/global" as global;
+
+.footer {
+  margin-top: 3.75rem;
+  text-align: center;
+  font-size: 12px;
+  color: global.$color-font-thin;
+}

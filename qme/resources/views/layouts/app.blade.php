@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>@yield('title', 'Qme')</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title') - Qme</title>
     @vite(['resources/css/app.scss'])
 </head>
 <body>
     <x-header />
-    <main>
+    <main class="main">
         @yield('content')
     </main>
-
-    <footer>
-        <p>&copy; {{ date('Y') }} Qme</p>
-    </footer>
-
+    <x-footer />    
+    @if (Route::has('login'))
+        <div class="h-14.5 hidden lg:block">hoge</div>
+    @endif
     @vite(['resources/js/app.js'])
 </body>
 </html>

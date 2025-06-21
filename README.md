@@ -1,4 +1,4 @@
-# MEMO 1H
+# MEMO
 
 ## アーキテクチャ
 Docker-composeで運用
@@ -39,4 +39,4 @@ Docker-composeで運用
 * 管理者のみ 質問作成画面
 
 ## 次やること
-画面作成
+共通パーツとcss設定

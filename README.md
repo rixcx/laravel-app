@@ -46,4 +46,4 @@ $cd qme && npm run dev
 
 
 ## 次やること
-共通パーツとcss設定
+breezeのセットアップ

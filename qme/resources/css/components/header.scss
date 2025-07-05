@@ -3,11 +3,11 @@
 .header {
   display: flex;
   align-items: center;
-  margin: 2.5rem 2rem;
+  margin: 1rem 2rem;
   // border-bottom: 2px global.$color-main-second solid;
   
   &__title {
-    margin: auto 3rem auto 1rem;
+    margin: 1rem;
     font-size: 1.75rem;
     font-weight: bold;
     
@@ -22,9 +22,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 3rem;
-    background-color: rgba(global.$color-bg, 0.4);
+    // background-color: rgba(global.$color-bg, 0.4);
     // box-shadow: 0 2px 18px rgba(0,0,0,0.04);
-    border-radius: 8px;
+    // border-radius: 8px;
     font-size: 14px;
     
     @include global.mediaquery(sp) {

@@ -3,7 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title') - Qme</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>
+    @hasSection('title')
+        @yield('title') - Qme
+    @else
+        Qme
+    @endif
+    </title>
     @vite(['resources/css/app.scss'])
 </head>
 <body>
@@ -11,10 +18,10 @@
     <main class="main">
         @yield('content')
     </main>
-    <x-footer />    
-    @if (Route::has('login'))
+    <x-footer />
+    <!-- @if (Route::has('login'))
         <div class="h-14.5 hidden lg:block">hoge</div>
-    @endif
+    @endif -->
     @vite(['resources/js/app.js'])
 </body>
 </html>

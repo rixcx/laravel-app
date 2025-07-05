@@ -29,11 +29,22 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+      $request->validate([
+          'name' => ['required', 'string', 'max:255'],
+          'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+          'password' => ['required', 'confirmed', Rules\Password::defaults()],
+      ], [
+          'name.required' => __('auth.validation.name.required'),
+          'name.max' => __('auth.validation.name.max'),
+          'email.required' => __('auth.validation.email.required'),
+          'email.email' => __('auth.validation.email.email'),
+          'email.lowercase' => __('auth.validation.email.lowercase'),
+          'email.max' => __('auth.validation.email.max'),
+          'email.unique' => __('auth.validation.email.unique'),
+          'password.required' => __('auth.validation.password.required'),
+          'password.confirmed' => __('auth.validation.password.confirmed'),
+          'password.min' => __('auth.validation.password.min'),
+      ]);
 
         $user = User::create([
             'name' => $request->name,

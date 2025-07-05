@@ -1,4 +1,15 @@
-<x-guest-layout>
+@extends('layouts.guest')
+
+@section('title', 'ログイン')
+
+@section('styles')
+    @vite(['resources/css/login.scss'])
+@endsection
+
+
+@section('content')
+<div class="login">
+  <p>おかえりなさい！</p>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -7,14 +18,14 @@
 
         <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('メールアドレス')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
  
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('パスワード')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
@@ -40,8 +51,9 @@
             @endif
 
             <x-primary-button class="ms-3">
-                {{ __('Log in') }}
+                {{ __('ログイン') }}
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</div>
+@endsection

@@ -12,18 +12,21 @@
     @endif
     </title>
     @vite(['resources/css/app.scss'])
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @vite(['resources/css/app.scss'])
-    @yield('styles')
-</head>
-    <body>
-      <x-header />
-       <main class="main">
-          @yield('content')
-       </main>
+    @stack('styles')
     
+    <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
+    @vite(['resources/css/app.scss'])
+
+</head>
+<body>
+    <x-header />
+    <main class="main">
+        @yield('content')
+    </main>
     <x-footer />
+    <!-- @if (Route::has('login'))
+        <div class="h-14.5 hidden lg:block">hoge</div>
+    @endif -->
     @vite(['resources/js/app.js'])
-    </body>
+</body>
 </html>

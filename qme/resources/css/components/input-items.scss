@@ -1,0 +1,74 @@
+@use "sass:color";
+@use "global/global" as global;
+
+.input-group {
+  position: relative;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.input-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 0 5px;
+  font-size: .875rem;
+  color: #aaa;
+  background-color: #fff;
+  pointer-events: none;
+  transition: all 0.1s ease-out;
+}
+
+.input-text {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: global.$color-font;
+  background-color: #fff;
+  transition: all 0.1s ease-in-out;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(130, 130, 130, 0.25);
+    border: 1px solid global.$color-font;
+  }
+}
+
+.input-text:focus + .input-label,
+.input-text:not(:placeholder-shown) + .input-label {
+  transform: translateY(-25px) translateX(-8px) scale(0.95);
+  color: global.$color-font;
+}
+
+.input-error {
+  margin-top: 5px;
+  font-size: .875rem;
+  color: #e3342f;
+  
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.input-primary-button {
+  width: 100%;
+  margin: 10px auto;
+  padding: 16px 20px;
+  border-radius: 8px;
+  background-color:  global.$color-primary-button;
+  text-align: center;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+      background-color: color.adjust(global.$color-primary-button, $lightness: -10%);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(130, 130, 130, 0.25);
+    border: none;
+  }
+}

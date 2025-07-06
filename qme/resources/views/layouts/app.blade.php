@@ -12,6 +12,11 @@
     @endif
     </title>
     @vite(['resources/css/app.scss'])
+    @stack('styles')
+
+    <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
+    @vite(['resources/css/app.scss'])
+    
 </head>
 <body>
     <x-header />

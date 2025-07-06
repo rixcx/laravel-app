@@ -1,4 +1,45 @@
+@use "sass:color";
+@use "global/global" as global;
+
 .register {
-  width: 70%;
-  margin: 0 auto;
+  text-align: center;
+  
+  &__container {
+    text-align: center;
+    background-color: #fff;
+    width: 100%;
+    max-width: 520px;
+    margin: 60px auto 0;
+    padding: 60px 90px;
+    border-radius: 8px;
+    
+    h3 {
+      font-size: 1.375rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+    
+    p {
+      color: global.$color-font-thin;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    margin: 0 auto 40px;
+  }
+
+  &__login {
+    text-align: center;
+    font-size: .875rem;
+    color: global.$color-font-thin;
+    
+    a {
+      text-decoration: underline;
+      
+      &:hover {
+        color: color.adjust(global.$color-font, $lightness: -50%);
+      }
+    }
+  }
 }

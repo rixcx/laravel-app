@@ -7,7 +7,7 @@
         @endauth
         <li><a href="/questions">質問一覧</a></li>
         @auth
-        <li><a href="/settings">設定</a></li>
+        <li><a href="/profile">設定</a></li>
         @endauth
       </ul>
       <div>

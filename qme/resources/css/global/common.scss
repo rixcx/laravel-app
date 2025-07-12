@@ -16,6 +16,11 @@ body {
   display: inline-block;
  }
  
+ img {
+    max-width: 100%;
+    height: auto;
+ }
+ 
  .main {
   margin: 0 auto;
   padding: 90px;

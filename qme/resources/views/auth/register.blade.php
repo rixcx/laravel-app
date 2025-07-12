@@ -12,7 +12,7 @@
     <h3>Qmeへようこそ</h3>
     <p>登録を始めましょう！</p>
 
-    <form class="register__form" method="POST" action="{{ route('register') }}">
+    <form class="register__form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
 
         <!-- Name -->
@@ -41,6 +41,16 @@
             <x-text-input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="off" placeholder=" "/>
             <x-input-label for="password_confirmation" :value="__('もう一度パスワードを入力してください')" />
             <x-input-error :messages="$errors->get('password_confirmation')" />
+        </div>
+        
+        <!-- Profile Image -->
+        <div class="input-group">
+            <x-image-input id="icon" name="icon" type="file" placeholder=" "/>
+            <x-input-label for="icon" :value="__('プロフィール画像')" class="input-label--image" />
+            <x-input-error :messages="$errors->get('icon')" />
+            <ul class="input-note">
+              <li>・2MB以下のJPG,PNG形式の画像を選択してください。</li>
+            </ul>
         </div>
 
         <x-primary-button :value="__('新規登録')" />

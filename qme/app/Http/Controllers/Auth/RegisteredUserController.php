@@ -33,6 +33,7 @@ class RegisteredUserController extends Controller
           'name' => ['required', 'string', 'max:255'],
           'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
           'password' => ['required', 'confirmed', Rules\Password::defaults()],
+          'icon' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:2048'],
       ], [
           'name.required' => __('auth.validation.name.required'),
           'name.max' => __('auth.validation.name.max'),
@@ -46,10 +47,16 @@ class RegisteredUserController extends Controller
           'password.min' => __('auth.validation.password.min'),
       ]);
 
+        $path = null;
+        if ($request->hasFile('icon')) {
+            $path = $request->file('icon')->store('icon', 'public');
+        }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'icon' => $path,
         ]);
 
         event(new Registered($user));

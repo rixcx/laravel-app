@@ -12,13 +12,6 @@
     <h2 class="home__title">Qme</h2>
     <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
 
-    @auth
-    <div>
-      <p>ようこそ、{{ Auth::user()->name }}さん！</p>
-      <p>あなたはログイン済です。</p>
-    </div>
-    @endauth
-
     <div class="home__container">
       <h3>Qmeにログインする</h3>
       <form class="home__form" method="POST" action="{{ route('login') }}">

@@ -1,0 +1,16 @@
+{
+  "name": "laravel-app",
+  "version": "1.0.0",
+  "description": "## アーキテクチャ Docker-composeで運用 * フレームワーク：laravel * DB：MySQL * サーバー：Nginx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"docker-compose up\" \"npm run dev --prefix qme\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

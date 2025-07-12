@@ -1,18 +1,19 @@
 @use "global/global" as global;
 
 .header {
-  background-color: aliceblue;
   display: flex;
   align-items: center;
-  
-  @include global.mediaquery(sp) {
-    background-color: peachpuff
-  }
+  margin: 1rem 2rem;
+  // border-bottom: 2px global.$color-main-second solid;
   
   &__title {
-    margin: auto 2rem;
-    font-size: 1.5rem;
+    margin: 1rem;
+    font-size: 1.75rem;
     font-weight: bold;
+    
+    a {
+      @include global.hover;
+    }
   }
 
   &__nav {
@@ -20,8 +21,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1.75rem;
-    background-color: #ccc;
+    padding: 1.5rem 3rem;
+    // background-color: rgba(global.$color-bg, 0.4);
+    // box-shadow: 0 2px 18px rgba(0,0,0,0.04);
+    // border-radius: 8px;
+    font-size: 14px;
+    
+    @include global.mediaquery(sp) {
+    }
     
     a {
       @include global.hover;
@@ -35,7 +42,5 @@
     div {
       gap: 1rem;
     }
-}
-  
-  
+  }
 }

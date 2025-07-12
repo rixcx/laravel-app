@@ -1,6 +1,28 @@
+@use "global/global" as global;
+
+html {
+  height: 100%;
+  background-image: linear-gradient(170deg, #deecdd 0%, #93d3b6 100%);
+}
+
 body {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
-  color: #333;
+  color: global.$color-font;
 }
+
+ a {
+  display: inline-block;
+ }
+ 
+ img {
+    max-width: 100%;
+    height: auto;
+ }
+ 
+ .main {
+  margin: 0 auto;
+  padding: 90px;
+  background-color: global.$color-bg;
+ }

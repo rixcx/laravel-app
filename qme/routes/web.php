@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,9 +11,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/questions', function () {
-    return view('questions');
-})->middleware(['auth'])->name('questions');
+Route::get('/questions', [QuestionController::class, 'index'])->middleware(['auth'])->name('questions');
 
 Route::get('/mypage', function () {
     return view('dashboard');

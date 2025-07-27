@@ -11,7 +11,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/questions', [QuestionController::class, 'index'])->middleware(['auth'])->name('questions');
+Route::controller(QuestionController::class)->middleware(['auth'])->group(function () {
+    Route::get('/questions', 'index')->name('questions');
+    Route::get('/questions/{id}', 'show')->name('questions.show');
+});
 
 Route::get('/mypage', function () {
     return view('dashboard');

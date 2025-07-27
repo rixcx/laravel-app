@@ -38,7 +38,8 @@ class QuestionController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $question = Question::with('answers.user')->findOrFail($id);
+        return view('questions.show', compact('question'));
     }
 
     /**

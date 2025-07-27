@@ -7,7 +7,7 @@
   質問一覧
   <ul>
     @foreach ($questions as $question)
-        <li>・{{ $question->text }}</li>
+        <li><a href="{{ route('questions.show', $question->id) }}">・{{ $question->text }}</a></li>
     @endforeach
   </ul>
 </div>

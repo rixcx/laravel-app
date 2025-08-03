@@ -15,7 +15,7 @@
             @method('delete')
 
             <div class="edit__delete__confirm">
-                <p>確認のため、パスワードを入力してください</p>
+                <p>確認のため、パスワードを入力してください。</p>
                 <x-text-input
                     id="password"
                     name="password"

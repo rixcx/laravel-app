@@ -16,7 +16,7 @@
   
   <section class="mypage__menus">
     <div class="mypage__box">
-      <a href="#">
+      <a href="{{ route('profile.show', Auth::id()) }}">
         <h2>プロフィール</h2>
         <p>自分のプロフィールを表示します</p>
       </a>

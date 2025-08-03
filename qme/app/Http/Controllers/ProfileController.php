@@ -17,9 +17,14 @@ class ProfileController extends Controller
      */
     public function show(string $id)
     {
-        // $user = User::with('questions.answers')->findOrFail($id);
         $user = User::findOrFail($id);
-        return view('profile.show', compact('user'));
+        
+        $answers = $user->answers()
+                        ->with('question')
+                        ->latest()
+                        ->paginate(10);
+
+        return view('profile.show', compact('user', 'answers'));
     }
 
 
